@@ -6,8 +6,6 @@ const uloziste = new Uloziste()
 const zobrazeni = new Zobrazeni(uloziste)
 
 
-// Ověřování dat při vkládání
-
 
 
 // '<td><button onclick="deleteData(' +
