@@ -15,6 +15,7 @@ export class Zobrazeni {
 
     addEventListeners() {
         this.tlacitko.addEventListener("click", () => {
+
             if(this.validateForm()) {
                 this.AddData();
                 this.showData();
@@ -31,15 +32,16 @@ export class Zobrazeni {
     }
 
     showData() {
+        this.uloziste.nacistZLocalStorage()
         let html = "";
-        this.uloziste.peopleList.forEach((element) => {
+        this.uloziste.peopleList.forEach((element, index) => {
             html += `
             <tr>
                 <td>${element.jmeno}</td>
                 <td>${element.prijmeni}</td>
                 <td>${element.vek}</td>
                 <td>${element.telefon}</td>
-                <td></td>
+                <td><button onclick="zobrazeni.deleteData(${index})" class="btn btn-danger">Odstranit</button></td>
             </tr>
             `;
         });
@@ -50,6 +52,7 @@ export class Zobrazeni {
         this.uloziste.peopleList.push(
             new Uzivatel(jmeno.value, prijmeni.value, vek.value, telefon.value)
         );
+        this.uloziste.ulozitDoLocalStorage()
     }
 
     validateForm() {
