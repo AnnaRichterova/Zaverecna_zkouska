@@ -6,15 +6,6 @@ const uloziste = new Uloziste()
 const zobrazeni = new Zobrazeni(uloziste)
 
 
-// Ověřování dat při vkládání
-
-
-
-
-
-
-
-
 /* <button onclick="updateData (' +
 // index +
 // ')" class="btn btn-warning m-2">Editovat</button></td>'; */
